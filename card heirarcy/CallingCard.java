@@ -7,4 +7,10 @@ public class CallingCard extends Card
         super(n);
         
     }
+    public String format()
+    {
+        String card = super.format();
+        
+        return card;
+    }
 }
