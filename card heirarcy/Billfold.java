@@ -1,22 +1,22 @@
 public class Billfold
 {
-    public Card card1;
-    public Card card2;
+    public String card1;
+    public String card2;
     
     public Billfold()
     {
        
     }
     
-    public void addCard(Card Card)
+    public void addCard(String newCard)
     {
         if( card1 == null)
         {
-            card1 = Card;
+            card1 = newCard;
         }
         else if (card2 == null)
         {
-            card2 = Card;
+            card2 = newCard;
         }
         else
         {
@@ -26,7 +26,7 @@ public class Billfold
     
     public String formatCards()
     {
-        Card cards = card1  card2;
+        String cards = card1 + card2;
         
         return cards;
     }
