@@ -35,7 +35,7 @@ public class Coin
       return name;
    }
    
-   public int compareTo( object otherObject )
+   public int compareTo( Object otherObject )
    {
        Coin otherCoin = (Coin) otherObject;
        //alternative
