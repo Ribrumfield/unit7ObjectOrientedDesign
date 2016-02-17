@@ -1,5 +1,12 @@
+import javax.swing.JFrame;
+
 
 public class TriangelViewer
 {
-  
+  public static void main(String[] args)
+  {
+      JFrame frame = new TriangleFrame();
+      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      frame.setVisible(true);
+  }
 }
