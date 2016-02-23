@@ -9,12 +9,20 @@ import java.awt.geom.Line2D;
 
 public class TriangleComponent extends JComponent
 {
+   // private Point2D[] points;
+    private int numPoints;
+    
    private static final int DOT_X = 100;
    private static final int DOT_Y = 100;
-      
+   
+   private static final int MAX_POINTS = 3;
+   
+   
    public void paintComponent(Graphics g)
    {
        Graphics g2 = (Graphics2D) g;
        
    }
+   
+   
 }
