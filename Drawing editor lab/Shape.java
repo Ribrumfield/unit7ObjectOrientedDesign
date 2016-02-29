@@ -5,20 +5,26 @@ import java.awt.Color;
 
 public abstract class Shape
 {
-  
+    private Point2D.Double center;
+    private double radius;
+    private Color color;
+    
     public Shape(Point2D.Double center, double radius, Color color)
     {
+       this.center = center;
+       this.radius = radius;
+       this.color = color;
        
     }
     
     public Point2D.Double getCenter()
     {
-        
+        return center;
     }
     
     public double getRadius()
     {
-        
+        return radius;
     }
     
     public void move(double x, double y)
@@ -31,18 +37,6 @@ public abstract class Shape
         
     }
     
-    public boolean isInside(Point2D.Double point)
-    {
-        
-    }
-    
-    public boolean isOnBoder(Point2D.Double point)
-    {
-        
-    }
-    
-    public void draw(Graphics2D g2,boolean filled)
-    {
-        
-    }
+    public abstract boolean isInside(Point2D.Double point);
+    public abstract  void draw(Graphics2D g2,boolean filled);
 }
