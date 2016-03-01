@@ -2,7 +2,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
-import java.awt.BorderLayout;
+import javax.swing.JFrame;
 
 public class ControlPanel extends JPanel
 {
@@ -10,22 +10,39 @@ public class ControlPanel extends JPanel
     private JButton squarebutton;
     private JButton colorbutton;
     private DrawingPanel canvas;
-    
+
     public ControlPanel(DrawingPanel canvas)
     {
         this.canvas = canvas;
-        
-        JPanel panel = new JPanel();
+
         circlebutton = new JButton("Add Circle");
         squarebutton = new JButton("Add Square");
         colorbutton = new JButton ("Pick Color");
-        
-        panel.add(colorbutton);
-        panel.add(circlebutton);
-        panel.add(squarebutton);
-        
-        this.setLayout(new BorderLayout());
-        this.add(canvas,BorderLayout.CENTER);
-        this.add(panel,BorderLayout.SOUTH);  
+
+        this.add(colorbutton);
+        this.add(circlebutton);
+        this.add(squarebutton);
+
+        ClickListener listener = new ClickListener();
+        this.colorbutton.addActionListener( listener );
+        this.circlebutton.addActionListener( listener );
+        this.squarebutton.addActionListener( listener);       
+    }
+
+    public class ClickListener implements ActionListener
+    {
+        private int count;
+        public ClickListener()
+        {
+            this.count = 0;
+        }
+
+        public void actionPerformed( ActionEvent event )
+        {
+            if (event.getActionCommand().equals("Pick Color"))
+            {
+                canvas.pickColor();
+            }
+        }
     }
 }

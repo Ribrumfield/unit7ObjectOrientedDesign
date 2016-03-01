@@ -4,15 +4,20 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
+import javax.swing.*;
+import java.util.ArrayList;
 
-public  class DrawingPanel extends JPanel //implements MouseListener, MouseMotionListener, KeyListener
+public  class DrawingPanel extends JPanel
 {
-    private Shape shape;
+    private Shape CurrentShape;
     private Color CurrentColor;
+    private ArrayList<Shape> shapes;
+    private boolean SelectedShape;
     
     public DrawingPanel()
     {
-        
+        setBackground(Color.WHITE);
+        CurrentColor = Color.WHITE;
     }
 
     public Color getColor()
@@ -23,6 +28,11 @@ public  class DrawingPanel extends JPanel //implements MouseListener, MouseMotio
     public Dimension getPrefferedSize()
     {
         return new Dimension(600, 600);
+    }
+    
+    public void pickColor()
+    {
+        CurrentColor = JColorChooser.showDialog(this,"Pick a Color" , Color.white);
     }
 
     public void addCircle()

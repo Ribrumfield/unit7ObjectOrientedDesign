@@ -1,5 +1,6 @@
 import javax.swing.JPanel;
 import javax.swing.JFrame;
+import java.awt.BorderLayout;
 
 public class DrawingEditor extends JFrame
 {
@@ -16,7 +17,8 @@ public class DrawingEditor extends JFrame
         this.canvas = new DrawingPanel();
         this.controls = new ControlPanel(canvas);
         
-        this.getContentPane().add(this.controls);
+        this.add(canvas,BorderLayout.CENTER);
+        this.add(controls,BorderLayout.SOUTH);  
         this.pack();
         
         this.setSize( FRAME_WIDTH, FRAME_HIGHT);
