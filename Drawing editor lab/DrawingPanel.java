@@ -6,6 +6,9 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseEvent;
 import javax.swing.*;
 import java.util.ArrayList;
+import java.awt.Graphics; 
+import java.awt.Graphics2D; 
+import java.awt.geom.Point2D;
 
 public  class DrawingPanel extends JPanel
 {
@@ -25,7 +28,7 @@ public  class DrawingPanel extends JPanel
        return CurrentColor; 
     }
 
-    public Dimension getPrefferedSize()
+    public Dimension getPreferedSize()
     {
         return new Dimension(600, 600);
     }
@@ -37,7 +40,10 @@ public  class DrawingPanel extends JPanel
 
     public void addCircle()
     {
-        
+        Point2D.Double  point = new Point2D.Double(300,300);
+        Circle c = new Circle(point, 20, CurrentColor);
+        shapes.add(c);
+        this.repaint();
     }
 
     public void addSquare()
@@ -48,6 +54,10 @@ public  class DrawingPanel extends JPanel
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
+        for (int i = 0 ; i < shapes.size(); i++)
+        {
+            i.draw();
+        }
     }
     
     class MousePressListener implements MouseListener

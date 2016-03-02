@@ -17,6 +17,11 @@ public abstract class Shape
        
     }
     
+    public Color getColor()
+    {
+        return color;
+    }
+    
     public Point2D.Double getCenter()
     {
         return center;

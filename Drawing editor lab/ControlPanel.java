@@ -43,6 +43,14 @@ public class ControlPanel extends JPanel
             {
                 canvas.pickColor();
             }
+            else if (event.getActionCommand().equals("Add Circle"))
+            {
+                canvas.addCircle();
+            }
+            else if (event.getActionCommand().equals("Add Square"))
+            {
+                canvas.addSquare();
+            }
         }
     }
 }
