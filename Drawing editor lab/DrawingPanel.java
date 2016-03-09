@@ -16,7 +16,7 @@ public  class DrawingPanel extends JPanel
     private Color CurrentColor;
     private ArrayList<Shape> shapes;
     private boolean SelectedShape;
-    
+
     public DrawingPanel()
     {
         setBackground(Color.WHITE);
@@ -25,14 +25,14 @@ public  class DrawingPanel extends JPanel
 
     public Color getColor()
     {
-       return CurrentColor; 
+        return CurrentColor; 
     }
 
     public Dimension getPreferedSize()
     {
         return new Dimension(600, 600);
     }
-    
+
     public void pickColor()
     {
         CurrentColor = JColorChooser.showDialog(this,"Pick a Color" , Color.white);
@@ -48,25 +48,29 @@ public  class DrawingPanel extends JPanel
 
     public void addSquare()
     {
-        
+
     }
 
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
+        
         for (int i = 0 ; i < shapes.size(); i++)
         {
-            i.draw();
+            shapes.get(i).draw((Graphics2D)g, true);
         }
     }
-    
+
     class MousePressListener implements MouseListener
     {
         public void mouseReleased(MouseEvent event) {}
+
         public void mouseClicked(MouseEvent event) {}
+
         public void mouseEntered(MouseEvent event) {}
+
         public void mouseExited(MouseEvent event) {}
+
         public void mousePressed(MouseEvent event) {}
     }
-    
 }

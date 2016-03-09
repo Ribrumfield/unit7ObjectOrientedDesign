@@ -18,9 +18,10 @@ public class Circle extends Shape
     {
         return true;
     }
+    
     public void draw(Graphics2D g2,boolean filled)
     {
-        
-        g2.fillOval((int)getCenter().getX(),(int)getCenter().getY(),(int)getRadius(),(int)getRadius());
+       g2.fillOval((int)getCenter().getX(),(int)getCenter().getY(),(int)getRadius(),(int)getRadius());
+       g2.drawOval((int)getCenter().getX(),(int)getCenter().getY(),(int)getRadius(),(int)getRadius());
     }
 }
