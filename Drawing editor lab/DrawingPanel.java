@@ -21,11 +21,12 @@ public  class DrawingPanel extends JPanel
     {
         setBackground(Color.WHITE);
         CurrentColor = Color.WHITE;
+        shapes = new ArrayList<Shape>();
     }
 
     public Color getColor()
     {
-        return CurrentColor; 
+        return CurrentColor;  
     }
 
     public Dimension getPreferedSize()
@@ -48,16 +49,21 @@ public  class DrawingPanel extends JPanel
 
     public void addSquare()
     {
-
+//         Point2D.Double  point = new Point2D.Double(300,300);
+//         Square s = new Square();
+//         shapes.add(s);
+//         this.repaint();
     }
 
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        
-        for (int i = 0 ; i < shapes.size(); i++)
+        if ( shapes != null)
         {
-            shapes.get(i).draw((Graphics2D)g, true);
+            for (int i = 0 ; i < shapes.size(); i++)
+            {
+                shapes.get(i).draw((Graphics2D)g, true);
+            }
         }
     }
 

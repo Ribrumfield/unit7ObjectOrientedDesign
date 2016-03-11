@@ -39,7 +39,7 @@ public abstract class Shape
     
     public void setRadius(double r)
     {
-        
+        radius = 400.0;
     }
     
     public abstract boolean isInside(Point2D.Double point);
